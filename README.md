@@ -3,10 +3,10 @@ Chart Question Answering System - A vertical domain fine-tuning project for Qwen
 
 
 ## 📊 Project Overview
-This project focuses on improving the accuracy of numerical extraction from charts using Qwen2-VL through:
+This project focuses on improving the accuracy of answering the question from charts using Qwen2-VL through:
 - **Data Reconstruction**: 5,000 high-quality instruction pairs from ChartQA dataset
-- **Structured Task Design**: Converting open-ended QA to structured extraction tasks
-- **QLoRA Fine-tuning**: Lightweight adaptation of Qwen2-VL-2B-Instruct
+- **Structured Task Design**: Converting open-ended QA to structured tasks
+- **LoRA Fine-tuning**: Lightweight adaptation of Qwen2-VL-2B-Instruct
 - **WebUI Deployment**: Interactive chart QA interface with Gradio
 ## 🚀 Key Achievements
 - **Accuracy Improvement**: 55% → 61.4% (Exact Match) on test set
@@ -15,7 +15,7 @@ This project focuses on improving the accuracy of numerical extraction from char
 - **End-to-End Solution**: From data preparation to deployment
 ## 🛠️ Tech Stack
 - **Model**: Qwen2-VL-2B-Instruct
-- **Fine-tuning**: QLoRA (Parameter-Efficient Fine-tuning)
+- **Fine-tuning**: LoRA (Parameter-Efficient Fine-tuning)
 - **Framework**: PyTorch, Hugging Face Transformers
 - **Dataset**: ChartQA (HuggingFaceM4/ChartQA)
 - **Deployment**: Gradio WebUI
@@ -31,7 +31,9 @@ chartqa-qa-system/
 │   ├── data_preprocessing.py  # Data cleaning and formatting
 │   ├── evaluation.py         # Model evaluation
 │   └── merge_model.py        # LoRA weight merging
-│   └── app.py             # Gradio interface
+│   └── app.py                # Gradio interface
+│   └── export.yaml           # LoRA weights merging and model export config
+# Gradio interface
 ├── output/
 │   └── merged_model/         # Fine-tuned model weights
 └── README.md
@@ -50,11 +52,11 @@ Open your browser and navigate to: http://localhost:7861
 📊 Usage Example
 Upload a chart image (pie chart, bar chart, line chart, etc.)
 Enter your question about the chart
-Get the model's answer with numerical extraction
-Verify the accuracy of the extracted values
+Get the model's answer 
+Verify the accuracy
 📈 Results
-Metric	Base Model	Fine-tuned Model	
-Exact Match Accuracy	55.0%	61.4%	
+Metric	  Base Model	 Fine-tuned Model	
+Accuracy	55.0%	       61.4%	
 Hallucination Rate	High	Significantly Reduced	
 🔧 Fine-tuning Details
 Target Layers: q_proj, k_proj, v_proj, o_proj, visual.patch_embed.proj, visual.merger.mlp, visual.blocks.*.attn, visual.blocks.*.mlp
