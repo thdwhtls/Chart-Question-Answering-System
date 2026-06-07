@@ -1,5 +1,5 @@
 # Chart-Question-Answering-System
-Chart Question Answering System - A vertical domain fine-tuning project for Qwen2-VL to alleviate hallucination issues in chart numerical extraction. Achieved 61.4% accuracy improvement (55%→61.4%) on ChartQA dataset through structured task design and LoRA fine-tuning. End-to-end deployment with Gradio WebUI for interactive chart analysis.
+Chart Question Answering System - A vertical domain fine-tuning project for Qwen2-VL to alleviate hallucination issues in chart-question answering. Achieved 61.4% accuracy improvement (55%→61.4%) on ChartQA dataset through structured task design and LoRA fine-tuning. End-to-end deployment with Gradio WebUI for interactive chart analysis.
 
 
 ## 📊 Project Overview
@@ -31,15 +31,14 @@ chartqa-qa-system/
 │   ├── data_preprocessing.py  # Data cleaning and formatting
 │   ├── evaluation.py         # Model evaluation
 │   └── merge_model.py        # LoRA weight merging
-├── webui/
-│   └── WebUI.py             # Gradio interface
+│   └── app.py             # Gradio interface
 ├── output/
 │   └── merged_model/         # Fine-tuned model weights
 └── README.md
 
-## 🚀 Quick Start
+
+🚀 Quick Start
 1. Clone the repository
-```bash
 git clone https://github.com/yourusername/chartqa-qa-system.git
 cd chartqa-qa-system
 2. Install dependencies
