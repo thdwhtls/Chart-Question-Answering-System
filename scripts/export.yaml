@@ -1,0 +1,7 @@
+model_name_or_path: Qwen/Qwen2-VL-2B-Instruct 
+adapter_name_or_path: LLaMA-Factory/saves/Qwen2-VL-2B-Instruct/lora/train_2026-06-05-new11
+template: qwen2_vl
+finetuning_type: lora
+export_dir: output/merged_model
+export_size: 2
+export_legacy_format: false
