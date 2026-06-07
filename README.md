@@ -33,7 +33,6 @@ chartqa-qa-system/
 │   └── merge_model.py        # LoRA weight merging
 │   └── app.py                # Gradio interface
 │   └── export.yaml           # LoRA weights merging and model export config
-# Gradio interface
 ├── output/
 │   └── merged_model/         # Fine-tuned model weights
 └── README.md
